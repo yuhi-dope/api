@@ -1,25 +1,14 @@
 <template>
   <div id="app">
-    <Header @getChildText="showChildText"></Header>
-    <p v-for="(item,index) in textList" :key="index" :city="data.city">Address:{{item}}</p>
+    <Home />
+    <About />
   </div>
 </template>
 
 <script>
-import About from "./components/About";
-import Home from "./components/Home";
+import Home from "./components/Home.vue";
+import About from "./components/About.vue";
 export default {
-  data() {
-    return {
-      childText: "",
-      item: ""
-    };
-  },
-  methods: {
-    showChildText(childText) {
-      this.textList.push(childText);
-    }
-  },
   components: {
     About,
     Home

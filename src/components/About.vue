@@ -1,8 +1,6 @@
 <template>
-  <div class="about">
-    <div class="weather">
-      <h1 class="weather-title">Address:{{ address }}</h1>
-    </div>
+  <div class="About">
+      <h1 class="weather-title" @mamapapa="child">Address:{{ address }}</h1>
   </div>
 </template>
 
@@ -21,11 +19,7 @@ export default {
 `
     );
     this.data = item.data;
-    this.name = this.data.name;
-    this.main = this.data.main;
-    this.temp = this.data.main.temp;
-    this.humidity = this.data.main.humidity;
-    this.speed = this.data.wind.speed;
+    this.address = this.data.address;
   }
 };
 </script>
