@@ -1,17 +1,8 @@
 <template>
   <div id="app">
-    <Home :city="children"/>
-    <About />
+    <router-components />
   </div>
 </template>
 
 <script>
-import Home from "./components/Home.vue";
-import About from "./components/About.vue";
-export default {
-  components: {
-    About,
-    Home
-  }
-};
 </script>

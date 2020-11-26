@@ -1,7 +1,7 @@
 <template>
   <div class="Header">
-    <input type="text" v-model="papa" />
-    <button @click="papa">住所自動入力</button>
+    <input type="text" v-model="papa" :city="papa"/>
+    <button @click="mama">住所自動入力</button>
   </div>
 </template>
 
@@ -13,9 +13,9 @@ export default {
     };
   },
   methods: {
-    sendParent() {
-      this.$emit("mamapapa", this.papa);
-      this.childText = "";
+    mama() {
+      this.$emit(this.papa,"add");
+      this.papa = "";
     }
   }
 };
