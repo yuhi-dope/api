@@ -1,6 +1,6 @@
 <template>
   <div class="Header">
-    <input type="text" v-model="papa" :city="children"/>
+    <input type="text" v-model="papa" />
     <button @click="papa">住所自動入力</button>
   </div>
 </template>
