@@ -1,22 +1,21 @@
 <template>
-  <div class="Header">
-    <input type="text" v-model="papa" :city="papa"/>
+  <div class="Home">
+    <input type="text" v-model="papa" :address="papa"/>
     <button @click="mama">住所自動入力</button>
+    <About ></About>
   </div>
 </template>
 
 <script>
+import About from "./components/About";
 export default {
   data() {
     return {
       papa: ""
     };
   },
-  methods: {
-    mama() {
-      this.$emit(this.papa,"add");
-      this.papa = "";
-    }
+  components: {
+    About
   }
 };
 </script>

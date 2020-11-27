@@ -1,13 +1,13 @@
 <template>
   <div class="About">
-      <h1 class="add">Address:{{ address }}</h1>
+    <h1 class="add" :ress="come" >Address:{{ address }}</h1>
   </div>
 </template>
 
 <script>
 import axios from "axios";
 export default {
-  props: ["papa"],
+  props: ["address"],
   data() {
     return {
       address:"",
@@ -15,11 +15,17 @@ export default {
   },
   async created() {
     let item = await axios.get(
-      `https://apis.postcode-jp.com/api/v3/postcodes?q=${this.papa},postcode=279-0031
+      `https://apis.postcode-jp.com/api/v3/postcodes?postcode=279-0031
 `
     );
     this.data = item.data;
     this.address = this.data.address;
-  }
+  },
+  methods: {
+    mama() {
+      this.$emit(this.papa,"add");
+      this.papa = "";
+    }
+  },
 };
 </script>
